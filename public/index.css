@@ -70,9 +70,9 @@ body{
 
   .fade{
     visibility: none;
-    color:red;
+    color:var(--clr-neutral-900);
     animation: fadeout linear 5s 2s forwards;
-    /* animation: dissapear ease-in 1s 2s forwards; */
+    /* animation: dissapear ease-in 1s 2s forwards; */ */
     /* opacity: 0;
     visibility: none; */
 
@@ -85,7 +85,7 @@ body{
  @keyframes fadeout{
      to{
    
-        color:blue;
+        color:var(--clr-neutral-100);
     } 
     }
   
