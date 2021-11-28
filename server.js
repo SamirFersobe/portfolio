@@ -2,6 +2,7 @@ const serverPort = 3000,
     http = require("http"),
     express = require("express"),
     app = express(),
+    const next = require('next'),
     
     server = http.createServer(app),
     WebSocket = require("ws"),

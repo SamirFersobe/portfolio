@@ -1,0 +1,306 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --clr-neutral-900:hsl(207,19%,9%);
+    --clr-neutral-100:hsl(0 ,0%,100%);
+    --clr-accent-400:hsl(212, 90%,61%);
+   
+    --TypewriterSpeed: 6s;
+    --TypewriterCharacters: 30;
+   
+   }
+   
+   
+   *,
+   *::before,
+   *::after{
+       font-family: "Source Code Pro", monospace;
+       box-sizing: border-box;
+   }
+   body{
+       background-color: var(--clr-neutral-100);
+       font-family:"Source Code Pro", monospace;
+   }
+   
+   .typewriter {
+       font-size: 3.6vw;
+       position: relative;
+       font-family: "Source Code Pro", monospace;
+       position: relative;
+       width:max-content;
+       display:inline-flex;
+   
+     }
+   
+   
+   .typewriter::before,
+   .typewriter::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+   }
+   
+   .fade,
+   .center{
+       display:inline-flex;
+       animation: center-text  ease-in 500ms 7.5s forwards;
+   }
+   
+   
+   
+   .center{
+       margin-left: 1ch;
+   }
+   /* white column that moves */
+   .typewriter::before {
+       background: var(--clr-neutral-100);
+       animation: typewriter var(--TypewriterSpeed)
+         steps(var(--TypewriterCharacters)) 1s forwards, fadeout 500ms;
+     }
+     
+     /*blinker  */
+   .typewriter::after {
+       width: 0.125em;
+       background: black;
+       animation: typewriter var(--TypewriterSpeed)
+           steps(var(--TypewriterCharacters)) 1s forwards,
+         blink 750ms steps(var(--TypewriterCharacters)) infinite;
+     }
+   
+     .fade{
+       visibility: none;
+       color:var(--clr-neutral-900);
+       animation: fadeout linear 5s 2s forwards;
+       /* animation: dissapear ease-in 1s 2s forwards; */ 
+       /* opacity: 0;
+       visibility: none; */
+   
+   
+   } 
+   
+       .fade:hover{
+           visibility: none;
+       }
+    @keyframes fadeout{
+        to{
+      
+           color:var(--clr-neutral-100);
+       } 
+       }
+     
+   @keyframes dissapear{
+       to{
+           height:0px;
+       }
+   }
+     @keyframes typewriter {
+       to {
+         left: 100%;
+       }
+     }
+     
+     @keyframes blink {
+       to {
+         background: transparent;
+       }
+     }
+   
+   @keyframes center-text{
+   to{
+       align-content: center;
+   }}
+   
+   .nav{
+       display:flex;
+       flex-wrap: wrap;
+       padding-left:6em;
+       padding-right:6em;
+       padding-top: 3em;;
+   }
+   
+   
+   .nav > * {
+   
+       display:flex;
+       flex-basis:33%;
+       font-size: clamp(1rem, 3vw + 1rem, 2rem);
+       justify-content: center;
+       align-content: center;
+       opacity: 0;
+       animation: show ease-in 2s 7s forwards; 
+   
+   }
+   
+   
+   @keyframes show{
+       to{
+           opacity:1;
+       }
+   }
+   
+   
+   .card-display{
+       display: flex;
+       flex-wrap:wrap;
+       padding: 6em;
+       padding-top: 3em;;
+       background-color:var(--clr-neutral-100);
+       gap:1em;
+       opacity: 0;
+       
+       animation: showprojects ease-in 3s 7s forwards; 
+   }
+   
+   @keyframes showprojects{
+       to{
+           opacity:1;
+       }
+   }
+   
+   .card{
+       flex: 1 1 20em;
+       gap: 1em;
+       border-radius: 0;
+       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+       background-color: black;
+       background-size: cover;
+       background-position:center;
+       background-repeat: no-repeat;
+   
+       min-width: 35ch;
+       max-height: 40em;
+       padding:10rem 0 0 ;
+       overflow:hidden;
+   
+       transition:transform 500ms ease;
+   }
+   .card:hover{
+       transform: scale(1.02);
+   }
+   
+   .card-content{
+       --padding:1.5rem;
+       padding:var(--padding);
+       background:linear-gradient(
+       rgb(0,0,0,0),
+       hsl(20 0% 0% / 0.3) 30%,
+       rgb(0,0,0,1)
+       );
+       height:100%;  
+   
+       transform:translateY(55%);
+       transition: transform 500ms ease;
+   }
+   
+   .card:hover .card-content{
+       transform:translateY(0);
+       transition: transform 500ms ease;
+   }
+   .card-title{
+       position:relative;
+       width: max-content;
+       max-width:100%;
+       font-size: 24px;
+       padding-bottom: 4px;
+       color:var(--clr-neutral-100);
+       word-wrap: normal;
+   }
+   
+   .card-title::after{
+       content:"";
+       position:absolute;
+       height:4px;
+       bottom:0;
+       left:calc(-1*var(--padding));
+       background:var(--clr-accent-400);
+       width:calc(100% +var(--padding));
+       transform:scale(0);
+       transition: transform 500ms ease;
+       transform-origin: left;
+   }
+   
+   .card:hover .card-title::after{
+       transform:scaleX(1);
+   }
+   
+   
+   .card p{
+       color:blanchedalmond;
+       font-size: 12px;
+       transition: 1s;
+       transform:translateY(55%);
+       transition: transform 500ms ease;
+       transition: visibility 500ms ease;
+       visibility: hidden;
+   
+   }
+   
+   .card:hover p{
+       visibility: visible;
+       transform:translateY(0);
+       transition: transform 500ms ease;
+   }
+   
+   .card-button{
+       cursor:pointer;
+       display:block;
+       text-decoration: none;
+       color:var(--clr-neutral-900);
+       background-color:var(--clr-accent-400);
+       padding:0.5em 1.25em;
+       border-radius:0.25em;
+       width: 30%;
+       align-self: center;
+       align-content: center;
+       margin-left: auto;
+       margin-right: auto;
+       
+   }
+   
+   .tags{
+       display:flex;
+       position: relative;
+       justify-content: center;
+       margin-right: 30px;
+       
+       
+   }
+   .tags li{
+       
+       background-color: burlywood;
+       list-style: none;
+       width:min-content;
+       border-radius: 3px;
+       margin: 5px;
+       padding: 6px;
+   
+       
+   }
+   .tags li > a{
+       color:green;
+   }
+   
+   .tags li>a :hover{
+       display:none;
+       padding:4px;
+   }
+   
+   .navbar{
+    display: flex;
+    flex-flow: row-reverse;
+    background: aqua;
+    
+   }
+
+   .navbar li{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 2rem;
+
+   }
