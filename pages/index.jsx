@@ -6,19 +6,19 @@ const frontPageData = {
     "projects":{
         "cardTitle":"Projects",
         "cardImage":"./images/project1_edited.jpg",
-        "cardText":"Lorem ipsum something I don't really remember how it goes but looks cool anways , ok tahnks!",
+        "cardText":"Check out my past projects, maybe there's something interesting.",
         "cardLink":"./projects",
     },
     "research":{
         "cardTitle":"Research",
         "cardImage":"./images/project3_edited.jpg",
-        "cardText":"orem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa velit ducimus nostrum ad repellat totam libero eligendi fugiat officiis iure quam tenetur sed harum, consectetur quis magni porro placeat vero!lorem80 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, ipsa consectetur! Suscipit tenetur maiores incidunt voluptates laborum a aliquid tempore magnam velit praesentium error",
+        "cardText":" I'm currently researching fuzzy classifiers and evolutionary multiobjective optimization algorithms.",
         "cardLink":"./research",
     },
     "about":{
         "cardTitle":"About Me",
         "cardImage":"./images/project2_edited.jpg",
-        "cardText":"Lorem ipsum something I don't really remember how it goes but looks cool anways , ok tahnks!",
+        "cardText": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorem eius vero quaerat odio vel deserunt impedit saepe explicabo? Perferendis?",
         "cardLink":"./about",
     },
 }
@@ -35,21 +35,7 @@ function HomePage() {
         <div className="fade">Hello my name is</div> 
         <div className ="center">Samir Fersobe</div>
     </div>
-    <div className= "nav">
-        <div>
-            Projects
-        </div>
 
-        <div>
-            Research
-        </div>
-
-        <div>
-            About me
-            
-        </div>
-
-    </div>
 
     <div className="card-display">
  

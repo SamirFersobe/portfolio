@@ -17,9 +17,9 @@ export default function Card(props:CardInfo) {
     };
     
     return (
-        <div style  = {cardStyle}  className= "card">
-            <div className ="card-content">
-            <h5 className="card-title">{props.cardTitle}</h5>
+        <div style  = {cardStyle}  className= "card ">
+            <div className ="card-content ">
+            <h5 className="card-title ">{props.cardTitle}</h5>
             <p>{props.cardText}</p>
             
 

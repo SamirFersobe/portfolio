@@ -23,8 +23,11 @@
    body{
        background-color: var(--clr-neutral-100);
        font-family:"Source Code Pro", monospace;
+       margin:0;
    }
-   
+
+
+
    .typewriter {
        font-size: 3.6vw;
        position: relative;
@@ -116,26 +119,7 @@
        align-content: center;
    }}
    
-   .nav{
-       display:flex;
-       flex-wrap: wrap;
-       padding-left:6em;
-       padding-right:6em;
-       padding-top: 3em;;
-   }
-   
-   
-   .nav > * {
-   
-       display:flex;
-       flex-basis:33%;
-       font-size: clamp(1rem, 3vw + 1rem, 2rem);
-       justify-content: center;
-       align-content: center;
-       opacity: 0;
-       animation: show ease-in 2s 7s forwards; 
-   
-   }
+
    
    
    @keyframes show{
@@ -206,10 +190,11 @@
        position:relative;
        width: max-content;
        max-width:100%;
-       font-size: 24px;
+       font-size: 32px;
        padding-bottom: 4px;
        color:var(--clr-neutral-100);
        word-wrap: normal;
+       
    }
    
    .card-title::after{
@@ -232,12 +217,13 @@
    
    .card p{
        color:blanchedalmond;
-       font-size: 12px;
+       font-size: 18px;
        transition: 1s;
        transform:translateY(55%);
        transition: transform 500ms ease;
        transition: visibility 500ms ease;
        visibility: hidden;
+       margin:2rem 0rem;
    
    }
    
@@ -247,60 +233,27 @@
        transition: transform 500ms ease;
    }
    
+   .card:hover .card-button{
+       visibility: visible;
+       transition: transform 500ms ease;
+   }
    .card-button{
+       visibility: hidden;
        cursor:pointer;
-       display:block;
+       display:flex;
        text-decoration: none;
        color:var(--clr-neutral-900);
        background-color:var(--clr-accent-400);
        padding:0.5em 1.25em;
-       border-radius:0.25em;
-       width: 30%;
+       border-radius:0.40em;
+       width: 40%;
        align-self: center;
        align-content: center;
+       justify-content: center;
        margin-left: auto;
        margin-right: auto;
+       transition: transform 500ms ease;
+       transition: visibility 500ms ease;
        
    }
    
-   .tags{
-       display:flex;
-       position: relative;
-       justify-content: center;
-       margin-right: 30px;
-       
-       
-   }
-   .tags li{
-       
-       background-color: burlywood;
-       list-style: none;
-       width:min-content;
-       border-radius: 3px;
-       margin: 5px;
-       padding: 6px;
-   
-       
-   }
-   .tags li > a{
-       color:green;
-   }
-   
-   .tags li>a :hover{
-       display:none;
-       padding:4px;
-   }
-   
-   .navbar{
-    display: flex;
-    flex-flow: row-reverse;
-    background: aqua;
-    
-   }
-
-   .navbar li{
-    padding-left: 2rem;
-    padding-right: 2rem;
-    font-size: 2rem;
-
-   }
